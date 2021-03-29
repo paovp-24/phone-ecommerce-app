@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovilApp.Celulares">
+    <ContentPage.Content>
+
+        <Grid>
+            <Image Source="FondoM.gif" Aspect="AspectFill"/>
+            <BoxView Color="SkyBlue" Opacity="0.5" />
+            <StackLayout>
+                <Image Grid.Row="0" Source="MovistarLogo.png" WidthRequest="100" HeightRequest="100" Margin="0,50,0,30"/>
+                <ListView ItemsSource="{Binding Productos} " HasUnevenRows="True"
+                    ItemSelected="ListView_ItemSelected" ItemTapped="ListView_ItemTapped" HorizontalOptions="CenterAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.RowSpan="2" Source="{Binding Url}" Aspect="AspectFill" 
+                                   HeightRequest="60" WidthRequest="60"/>
+                                    <Label Grid.Column="1" Text="{Binding Name} " FontAttributes="Bold" TextColor="White"  />
+                                    <Label Grid.Row="1" Grid.Column="1" Text ="{Binding Price}" TextColor="White" 
+                                   VerticalOptions="End" />
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label Text=""/>
+                <Button  x:Name="Btnsalir" Text="Salir" BackgroundColor="skyBlue" TextColor="White" BorderRadius="10"/>
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovilApp.DeBanco">
+    <ContentPage.Content>
+
+        <Grid>
+            <Image Source="FondoM.gif"  Aspect="AspectFill"/>
+            <BoxView Color="SkyBlue" Opacity="0.5" />
+            <StackLayout>
+                <Image Grid.Row="0" Source="MovistarLogo.png" WidthRequest="100" HeightRequest="100" Margin="0,50,0,30"/>
+                <Label Text="Movistar Store" FontSize="20" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                <Label Text=""/>
+                <Button  x:Name="BtnCompra" Text="Compra de Celulares" BackgroundColor="SkyBlue" TextColor="White" BorderRadius="20"/>
+                <Label Text=""/>
+                <Button Text="Mi Carrito" BackgroundColor="SkyBlue" TextColor="White" BorderRadius="20"/>
+                <Label Text=""/>
+                <Button Text="Configuracion de Cuenta" BackgroundColor="skyBlue" TextColor="White" BorderRadius="20"/>
+                <Label Text=""/>
+                <Button  x:Name="Btnsalir" Text="Salir" BackgroundColor="skyBlue" TextColor="White" BorderRadius="10"/>
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

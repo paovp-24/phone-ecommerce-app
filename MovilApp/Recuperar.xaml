@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovilApp.Recuperar">
+    <ContentPage.Content>
+
+        <Grid>
+            <Image Source="FondoM.gif" Aspect="AspectFill"/>
+            <BoxView Color="SkyBlue" Opacity="0.5" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height ="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row ="0" Source="MovistarLogo.png" WidthRequest="100" 
+                   HeightRequest="100" Margin="0,50,0,30" />
+
+
+                <StackLayout Grid.Row="1" Padding="10,20">
+
+
+                    <Entry x:Name="txtCorreo" Placeholder="Correo Electronico" PlaceholderColor="White" TextColor="White"/>
+                    <Label Text=""/>
+                    <Entry x:Name="txtOldpass" Placeholder="Contraseña Antigua" PlaceholderColor="White" TextColor="White"/>
+                    <Label Text=""/>
+                    <Entry x:Name="txtPass" Placeholder="Nueva Contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White"/>
+                    <Label Text=""/>
+                    <Entry x:Name="txtPassConfirm" Placeholder="Confirmar Nueva Contraseña " PlaceholderColor="White" IsPassword="True" TextColor="White"/>
+                    <Label Text=""/>
+                    <Button  x:Name="btnRecuperar" Text="Cambiar Contraseña" BackgroundColor="SkyBlue" TextColor="White" 
+                BorderRadius="20" />
+
+                    <Button  x:Name="btnVolver" Text="Regresar" BackgroundColor="SkyBlue" TextColor="White" 
+                BorderRadius="20" />
+
+
+
+                    <Label Text=""/>
+                </StackLayout>
+
+            </Grid>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

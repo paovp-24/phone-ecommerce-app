@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovilApp.MainPage">
+    <Grid>
+        <Image Source="FondoM.gif" Aspect="AspectFill"/>
+        <BoxView Color="SkyBlue" Opacity="0.5" />
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height ="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Image Grid.Row ="0" Source="MovistarLogo.png" WidthRequest="100" 
+                   HeightRequest="100" Margin="0,50,0,30" />
+            <StackLayout Grid.Row="1" Padding="10,20">
+                <Entry x:Name="txtCorreo" Placeholder="Correo Electronico" PlaceholderColor="White" TextColor="White"/>
+                <Label Text=""/>
+                <Entry x:Name="txtPass" Placeholder="Contrasena" PlaceholderColor="White" IsPassword="True" TextColor="White"/>
+                <Label Text=""/>
+                <Button  x:Name="btnIr" Text="Iniciar Sesion" BackgroundColor="SkyBlue" TextColor="White" 
+                BorderRadius="20" />
+                <Label Text=""/>
+                <StackLayout Orientation="Horizontal" >
+                    <Button  x:Name="Recuperar" Text="Cambiar Contraseña" BackgroundColor="Transparent" TextColor="White"  FontAttributes="Bold" HorizontalOptions="FillAndExpand"/>
+                    <Button  x:Name="Registrarse" Text="Registrarse" BackgroundColor="Transparent" TextColor="White"  FontAttributes="Bold" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -13,35 +13,53 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Image Grid.Row ="0" Source="MovistarLogo.png" WidthRequest="100" 
-                   HeightRequest="100" Margin="0,50,0,30" />
+                <ScrollView >
 
+                    <StackLayout Grid.Row="1" Padding="50,50">
+                        <Image Grid.Row ="0" Source="MovistarLogo.png" WidthRequest="100" 
+                   HeightRequest="100" />
+                        <Label Text="Registro MovilApp" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="Title"/>
+                        <Label Text="" ></Label>
+                        <Entry x:Name="txtNombre" Placeholder="Nombre" PlaceholderColor="White" TextColor="White"/>
+                        <Label Text="" ></Label>
 
-                <StackLayout Grid.Row="1" Padding="10,20">
+                        <Entry x:Name="txtApellidoPaterno" Placeholder="Apellido paterno" PlaceholderColor="White" TextColor="White"/>
+                        <Label Text="" ></Label>
 
+                        <Entry x:Name="txtApellidoMaterno" Placeholder="Apellido materno" PlaceholderColor="White" TextColor="White"/>
+                        <Label Text="" ></Label>
 
-                    <Entry x:Name="txtNombre" Placeholder="Nombre" PlaceholderColor="White" TextColor="White"/>
-                    <Label Text=""/>
-                    <Entry x:Name="txtCorreo" Placeholder="Correo Electronico" PlaceholderColor="White" TextColor="White"/>
-                    <Label Text=""/>
-                    <Entry x:Name="txtPhone" Placeholder="Número Telefonico" PlaceholderColor="White" TextColor="White"/>
-                    <Label Text=""/>
-                    <Entry x:Name="txtPass" Placeholder=" Contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White"/>
-                    <Label Text=""/>
-                    <Entry x:Name="txtPassConfirm" Placeholder="Confirmar Contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White"/>
-                    <Label Text=""/>
-                    <Button  x:Name="btnIr" Text="Registrarse" BackgroundColor="SkyBlue" TextColor="White" 
-                BorderRadius="20" />
+                        <Entry x:Name="id" Placeholder="Identificación" PlaceholderColor="White" TextColor="White"/>
+                        <Label Text="" ></Label>
 
-                    <Button  x:Name="btnVolver" Text="Regresar" BackgroundColor="SkyBlue" TextColor="White" 
-                BorderRadius="20" />
+                        <Entry x:Name="txtPhone" Placeholder="Número Telefonico" PlaceholderColor="White" TextColor="White"/>
+                        <Label Text="" ></Label>
 
+                        <Label Text="Fecha de nacimiento: " TextColor="White"/>
 
+                        <DatePicker x:Name="fecha" />
+                        <Label Text="" ></Label>
 
+                        <Entry x:Name="txtDireccion" Placeholder="Dirección" PlaceholderColor="White" TextColor="White"/>
+                        <Label Text="" ></Label>
 
+                        <Entry x:Name="txtCorreo" Placeholder="Correo Electronico" PlaceholderColor="White" TextColor="White"/>
+                        <Label Text="" ></Label>
 
-                    <Label Text=""/>
-                </StackLayout>
+                        <Entry x:Name="txtPass" Placeholder=" Contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White"/>
+                        <Label Text="" ></Label>
+
+                        <Entry x:Name="txtPassConfirm" Placeholder="Confirmar Contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White"/>
+                        <Label Text="" ></Label>
+
+                        <Button  x:Name="btnIr" Text="Registrarse" BackgroundColor="SkyBlue" TextColor="White" 
+                    BorderRadius="20" />
+                        <Button  x:Name="btnVolver" Text="Regresar" BackgroundColor="SkyBlue" TextColor="White" 
+                    BorderRadius="20" />
+
+                    </StackLayout >
+
+                </ScrollView>
 
             </Grid>
 

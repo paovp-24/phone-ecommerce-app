@@ -5,7 +5,7 @@
     <ContentPage.Content>
 
         <Grid>
-            <Image Source="FondoM.gif" Aspect="AspectFill"/>
+            <Image Source="Fondo.jpg" Aspect="AspectFill"/>
             <BoxView Color="SkyBlue" Opacity="0.5" />
             <Grid>
                 <Grid.RowDefinitions>

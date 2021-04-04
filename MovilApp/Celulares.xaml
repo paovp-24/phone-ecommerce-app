@@ -5,7 +5,7 @@
     <ContentPage.Content>
 
         <Grid>
-            <Image Source="FondoM.gif" Aspect="AspectFill"/>
+            <Image Source="Fondo.jpg" Aspect="AspectFill"/>
             <BoxView Color="SkyBlue" Opacity="0.5" />
             <StackLayout>
                 <Image Grid.Row="0" Source="MovistarLogo.png" WidthRequest="100" HeightRequest="100" Margin="0,50,0,30"/>

@@ -4,7 +4,7 @@
              x:Class="MovilApp.Registro">
     <ContentPage.Content>
         <Grid>
-            <Image Source="FondoM.gif"  Aspect="AspectFill"/>
+            <Image Source="Fondo.jpg"  Aspect="AspectFill"/>
             <BoxView Color="SkyBlue" Opacity="0.5" />
             <Grid>
                 <Grid.RowDefinitions>
@@ -20,19 +20,20 @@
                    HeightRequest="100" />
                         <Label Text="Registro MovilApp" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="Title"/>
                         <Label Text="" ></Label>
-                        <Entry x:Name="txtNombre" Placeholder="Nombre" PlaceholderColor="White" TextColor="White"/>
+                        
+                        <Entry x:Name="txtNombre" Placeholder="Nombre" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
-                        <Entry x:Name="txtApellidoPaterno" Placeholder="Apellido paterno" PlaceholderColor="White" TextColor="White"/>
+                        <Entry x:Name="txtApellidoPaterno" Placeholder="Apellido paterno" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
-                        <Entry x:Name="txtApellidoMaterno" Placeholder="Apellido materno" PlaceholderColor="White" TextColor="White"/>
+                        <Entry x:Name="txtApellidoMaterno" Placeholder="Apellido materno" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
-                        <Entry x:Name="id" Placeholder="Identificación" PlaceholderColor="White" TextColor="White"/>
+                        <Entry x:Name="txtIdentificacion" Placeholder="Identificación" PlaceholderColor="White" TextColor="White" MaxLength="9"/>
                         <Label Text="" ></Label>
 
-                        <Entry x:Name="txtPhone" Placeholder="Número Telefonico" PlaceholderColor="White" TextColor="White"/>
+                        <Entry x:Name="txtPhone" Placeholder="Número Telefonico" PlaceholderColor="White" TextColor="White" MaxLength="8"/>
                         <Label Text="" ></Label>
 
                         <Label Text="Fecha de nacimiento: " TextColor="White"/>
@@ -40,16 +41,16 @@
                         <DatePicker x:Name="fecha" />
                         <Label Text="" ></Label>
 
-                        <Entry x:Name="txtDireccion" Placeholder="Dirección" PlaceholderColor="White" TextColor="White"/>
+                        <Entry x:Name="txtDireccion" Placeholder="Dirección" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
-                        <Entry x:Name="txtCorreo" Placeholder="Correo Electronico" PlaceholderColor="White" TextColor="White"/>
+                        <Entry x:Name="txtCorreo" Placeholder="Correo Electronico" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
-                        <Entry x:Name="txtPass" Placeholder=" Contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White"/>
+                        <Entry x:Name="txtPass" Placeholder=" Contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
-                        <Entry x:Name="txtPassConfirm" Placeholder="Confirmar Contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White"/>
+                        <Entry x:Name="txtPassConfirm" Placeholder="Confirmar Contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
                         <Button  x:Name="btnIr" Text="Registrarse" BackgroundColor="SkyBlue" TextColor="White" 

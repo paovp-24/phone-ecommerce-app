@@ -1,15 +1,20 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using MovilApp.Models;
 
 namespace MovilApp
 {
     public partial class MainPage : ContentPage
     {
+        String DB_PATH = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Siu_cSharp.db3");
+
         public MainPage()
         {
             InitializeComponent();
@@ -33,7 +38,12 @@ namespace MovilApp
 
         private void BtnIr_Clicked(object sender, EventArgs e)
         {
-            if (txtCorreo.Text == "Usuario" && txtPass.Text == "123456")
+            var db = new SQLiteConnection(DB_PATH);
+            var tablaUsuario = db.Table<Usuario>();
+            var data = tablaUsuario.Where(field => field.Email == txtCorreo.Text && field.Password == txtPass.Text).FirstOrDefault();
+
+            //if (txtCorreo.Text == "Usuario" && txtPass.Text == "123456")
+            if(data != null )
             {
                 DisplayAlert("Inicio de Sesion", "Ingreso Correcto, Bienvenido!!!", "Confirmar");
                 ((NavigationPage)this.Parent).PushAsync(new DeBanco());

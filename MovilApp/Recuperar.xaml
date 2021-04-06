@@ -5,8 +5,8 @@
     <ContentPage.Content>
 
         <Grid>
-            <Image Source="Fondo.jpg" Aspect="AspectFill"/>
-            <BoxView Color="SkyBlue" Opacity="0.5" />
+            <Image Source="fondo1.jpg" Aspect="AspectFill"/>
+            <BoxView Color="#35AAF2" Opacity="0.3" />
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -14,25 +14,25 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Image Grid.Row ="0" Source="MovistarLogo.png" WidthRequest="100" 
-                   HeightRequest="100" Margin="0,50,0,30" />
+                <Image Grid.Row ="0" Source="logo1.png" WidthRequest="150" 
+                   HeightRequest="150" Margin="0,50,0,30" />
 
 
                 <StackLayout Grid.Row="1" Padding="10,20">
 
 
-                    <Entry x:Name="txtCorreo" Placeholder="Correo Electronico" PlaceholderColor="White" TextColor="White"/>
+                    <Entry x:Name="txtCorreo" Placeholder="Correo electrónico" PlaceholderColor="White" TextColor="White"/>
                     <Label Text=""/>
-                    <Entry x:Name="txtOldpass" Placeholder="Contraseña Antigua" PlaceholderColor="White" TextColor="White"/>
+                    <Entry x:Name="txtOldpass" Placeholder="Contraseña antigua" PlaceholderColor="White" TextColor="White"/>
                     <Label Text=""/>
-                    <Entry x:Name="txtPass" Placeholder="Nueva Contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White"/>
+                    <Entry x:Name="txtPass" Placeholder="Nueva contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White"/>
                     <Label Text=""/>
-                    <Entry x:Name="txtPassConfirm" Placeholder="Confirmar Nueva Contraseña " PlaceholderColor="White" IsPassword="True" TextColor="White"/>
+                    <Entry x:Name="txtPassConfirm" Placeholder="Confirmar nueva contraseña " PlaceholderColor="White" IsPassword="True" TextColor="White"/>
                     <Label Text=""/>
-                    <Button  x:Name="btnRecuperar" Text="Cambiar Contraseña" BackgroundColor="SkyBlue" TextColor="White" 
+                    <Button  x:Name="btnRecuperar" Text="Cambiar Contraseña" BackgroundColor="#0583F2" TextColor="White" 
                 BorderRadius="20" />
 
-                    <Button  x:Name="btnVolver" Text="Regresar" BackgroundColor="SkyBlue" TextColor="White" 
+                    <Button  x:Name="btnVolver" Text="Regresar" BackgroundColor="#0583F2" TextColor="White" 
                 BorderRadius="20" />
 
 

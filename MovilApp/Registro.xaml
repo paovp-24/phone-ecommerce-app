@@ -4,8 +4,8 @@
              x:Class="MovilApp.Registro">
     <ContentPage.Content>
         <Grid>
-            <Image Source="Fondo.jpg"  Aspect="AspectFill"/>
-            <BoxView Color="SkyBlue" Opacity="0.5" />
+            <Image Source="fondo1.jpg"  Aspect="AspectFill"/>
+            <BoxView Color="#35AAF2" Opacity="0.3" />
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -16,24 +16,24 @@
                 <ScrollView >
 
                     <StackLayout Grid.Row="1" Padding="50,50">
-                        <Image Grid.Row ="0" Source="MovistarLogo.png" WidthRequest="100" 
-                   HeightRequest="100" />
-                        <Label Text="Registro MovilApp" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="Title"/>
+                        <Image Grid.Row ="0" Source="logo1.png" WidthRequest="150" 
+                   HeightRequest="150" Margin="0 0 30 0" />
+                        <Label Text="Registro" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="Title"/>
                         <Label Text="" ></Label>
                         
                         <Entry x:Name="txtNombre" Placeholder="Nombre" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
-                        <Entry x:Name="txtApellidoPaterno" Placeholder="Apellido paterno" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
+                        <Entry x:Name="txtApellidoPaterno" Placeholder="Primer apellido" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
-                        <Entry x:Name="txtApellidoMaterno" Placeholder="Apellido materno" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
+                        <Entry x:Name="txtApellidoMaterno" Placeholder="Segundo apellido" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
                         <Entry x:Name="txtIdentificacion" Placeholder="Identificación" PlaceholderColor="White" TextColor="White" MaxLength="9"/>
                         <Label Text="" ></Label>
 
-                        <Entry x:Name="txtPhone" Placeholder="Número Telefonico" PlaceholderColor="White" TextColor="White" MaxLength="8"/>
+                        <Entry x:Name="txtPhone" Placeholder="Número telefónico" PlaceholderColor="White" TextColor="White" MaxLength="8"/>
                         <Label Text="" ></Label>
 
                         <Label Text="Fecha de nacimiento: " TextColor="White"/>
@@ -44,18 +44,18 @@
                         <Entry x:Name="txtDireccion" Placeholder="Dirección" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
-                        <Entry x:Name="txtCorreo" Placeholder="Correo Electronico" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
+                        <Entry x:Name="txtCorreo" Placeholder="Correo electrónico" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
                         <Entry x:Name="txtPass" Placeholder=" Contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
-                        <Entry x:Name="txtPassConfirm" Placeholder="Confirmar Contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White" MaxLength="100"/>
+                        <Entry x:Name="txtPassConfirm" Placeholder="Confirmar contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
-                        <Button  x:Name="btnIr" Text="Registrarse" BackgroundColor="SkyBlue" TextColor="White" 
+                        <Button  x:Name="btnIr" Text="Registrarse" BackgroundColor="#0583F2" TextColor="White" 
                     BorderRadius="20" />
-                        <Button  x:Name="btnVolver" Text="Regresar" BackgroundColor="SkyBlue" TextColor="White" 
+                        <Button  x:Name="btnVolver" Text="Regresar" BackgroundColor="#0583F2" TextColor="White" 
                     BorderRadius="20" />
 
                     </StackLayout >

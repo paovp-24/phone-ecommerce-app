@@ -38,7 +38,7 @@ namespace MovilApp
             {
                 Name = "Samsung Galaxy Note20 Ultra",
                 Price = "Precio: ¢53.400/mes",
-                Url = "https://images-na.ssl-images-amazon.com/images/I/712aHRi7eGL._AC_SX679_.jpg"
+                Url = "https://images.samsung.com/is/image/samsung/latin-galaxy-note20-ultra-n985-sm-n985fzkkgto-frontmysticblack-320814281?$684_547_PNG$"
             });
 
 
@@ -46,28 +46,28 @@ namespace MovilApp
             {
                 Name = "Apple iPhone 12 PRO MAX 128GB",
                 Price = "Precio: ¢54.500/mes",
-                Url = "https://img.pccomponentes.com/articles/32/328880/1943-apple-iphone-12-pro-max-128gb-azul-pacifico-libre.jpg"
+                Url = "https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple-iPhone-12-Pro-Max/Pacific-Blue/Apple-iPhone-12-Pro-Max-Pacific-Blue-frontimage.png"
             });
 
             Productos.Add(new Producto
             {
                 Name = "Huawei P40 PRO",
                 Price = "Precio: ¢20.000/mes",
-                Url = "https://www.muycomputer.com/wp-content/uploads/2020/03/Huawei-P40-Pro-Plus-5G-e1584952635501.jpg"
+                Url = "https://www.movilzona.es/app/uploads/2020/03/Huawei-P40-Pro-GRANDE-1.png"
             });
 
             Productos.Add(new Producto
             {
                 Name = "Xiaomi Redmi Note 9",
                 Price = "Precio: ¢20.000/mes",
-                Url = "https://images-na.ssl-images-amazon.com/images/I/61lXY%2BSfrWL._AC_SX522_.jpg"
+                Url = "https://www.amcsolutions.pe/wp-content/uploads/2020/09/Redmi-note-9.png"
             });
 
             Productos.Add(new Producto
             {
                 Name = "LG K71",
                 Price = "Precio: ¢20.400/mes",
-                Url = "https://i.blogs.es/b282a2/lgk71/1366_2000.jpg"
+                Url = "https://digicompra.com.gt/wp-content/uploads/2020/11/LG_K51s_Azul-900x900.png"
             });
 
             BindingContext = this;

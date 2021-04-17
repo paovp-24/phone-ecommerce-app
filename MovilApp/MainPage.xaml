@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MovilApp.MainPage">
     <Grid>
-        <Image Source="fondo1.png" Aspect="AspectFill"/>
+        <Image Source="fondo1.jpg" Aspect="AspectFill"/>
         <BoxView Color="#35AAF2" Opacity="0.3" />
         <Grid >
             <Grid.RowDefinitions>

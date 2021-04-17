@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovilApp.Admin">
+    <ContentPage.Content>
+        
+        <StackLayout Orientation="Vertical" Padding="32" Spacing="10">
+            <Label Text="Modo Admin"
+        HorizontalOptions="Center" FontSize="Large" />
+            <Button Text="Ver lista de usuarios" x:Name="BtnAllUser"/>
+            <Button Text="Actualizar usuario" x:Name="btnActualizar"/>
+            <Button Text="Eliminar usuario" x:Name="btnEliminar"/>
+
+            <Label x:Name="StatusMessage" FontSize="Medium" />
+            <ScrollView Orientation="Horizontal">
+                <ListView x:Name="userList" Margin="10" HeightRequest="650" WidthRequest="1000">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid  Padding="5" FlowDirection="LeftToRight" RowSpacing="0" ColumnSpacing="0" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand"    Grid.Column="1" Text="{Binding Nombre}" />
+                                    <Label VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="2" Text="{Binding Apellido_Paterno}" />
+                                    <Label VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="3" Text="{Binding Apellido_Materno}" />
+                                    <Label VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="4" Text="{Binding ID}" />
+                                    <Label VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="5" Text="{Binding Telefono}" />
+                                    <Label VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="6" Text="{Binding Fecha_Nacimiento}" />
+                                    <Label VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="7" Text="{Binding Email}" />
+                                    <Label VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="8" Text="{Binding Direccion}" />
+                                    <Label VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="9" Text="{Binding Rol}" />
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

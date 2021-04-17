@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovilApp.Android", "MovilAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovilApp.iOS", "MovilApp.iOS\MovilApp.iOS.csproj", "{6BBE9143-E0FB-4659-9CD1-1270DB980E0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovilApp", "MovilApp\MovilApp.csproj", "{25B44AF1-EF5D-45CE-85E2-CE44331E4887}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovilApp", "MovilApp\MovilApp.csproj", "{25B44AF1-EF5D-45CE-85E2-CE44331E4887}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -40,13 +40,20 @@ namespace MovilApp
         {
             var db = new SQLiteConnection(DB_PATH);
             var tablaUsuario = db.Table<Usuario>();
-            var data = tablaUsuario.Where(field => field.Email == txtCorreo.Text && field.Password == txtPass.Text).FirstOrDefault();
+            var adminDB = tablaUsuario.Where(field => field.Email == txtCorreo.Text && field.Password == txtPass.Text && field.Rol == 1).FirstOrDefault();
+            var usuarioDB = tablaUsuario.Where(field => field.Email == txtCorreo.Text && field.Password == txtPass.Text && field.Rol == 0).FirstOrDefault();
+
 
             //if (txtCorreo.Text == "Usuario" && txtPass.Text == "123456")
-            if(data != null )
+            if (usuarioDB != null)
             {
                 DisplayAlert("Inicio de Sesion", "Ingreso Correcto, Bienvenido!!!", "Confirmar");
                 ((NavigationPage)this.Parent).PushAsync(new DeBanco());
+            }
+            else if (adminDB != null )
+            {
+                DisplayAlert("Inicio de Sesion", "Ingreso Correcto como administrador, Bienvenido!!!", "Confirmar");
+                ((NavigationPage)this.Parent).PushAsync(new Admin());
             }
             else
             {

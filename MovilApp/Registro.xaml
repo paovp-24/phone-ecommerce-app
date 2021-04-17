@@ -17,7 +17,7 @@
 
                     <StackLayout Grid.Row="1" Padding="50,50">
                         <Image Grid.Row ="0" Source="logo1.png" WidthRequest="150" 
-                   HeightRequest="150" Margin="0 0 30 0" />
+                   HeightRequest="150" Margin="0, 0, 30, 0" />
                         <Label Text="Registro" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="Title"/>
                         <Label Text="" ></Label>
                         
@@ -55,6 +55,10 @@
 
                         <Button  x:Name="btnIr" Text="Registrarse" BackgroundColor="#0583F2" TextColor="White" 
                     BorderRadius="20" />
+
+                        <Button  x:Name="btnCrearAdmin" Text="Registrarse como Administrador" BackgroundColor="#0583F2" TextColor="White" 
+                    BorderRadius="20" />
+                        
                         <Button  x:Name="btnVolver" Text="Regresar" BackgroundColor="#0583F2" TextColor="White" 
                     BorderRadius="20" />
 

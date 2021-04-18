@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovilApp.Individual">
+    <ContentPage.Content>
+
+        <Grid>
+            <Image Source="fondo1.png" Aspect="AspectFill"/>
+            <BoxView Color="#35AAF2" Opacity="0.3" />
+            <StackLayout>
+                <Label Text=""/>
+        
+                <Image Grid.Row="0" Source="logo1.png" WidthRequest="150" HorizontalOptions="Center" x:Name="img_producto" HeightRequest="150" Margin="0,50,0,30"/>
+                <Label Text=""/>
+
+                <Label Text="Nombre:" HorizontalOptions="Center" TextColor="White"/>
+                <Label Text=""/>
+
+                <Label  HorizontalOptions="Center" Text="" x:Name="LabelName" TextColor="White"/>
+                <Label Text=""/>
+          
+                <Label Text="Precio" HorizontalOptions="Center" TextColor="White"/>
+                <Label Text=""/>
+           
+                <Label  HorizontalOptions="Center" Text="" x:Name="LabelPrice" TextColor="White"/>
+                <Label Text=""/>
+             
+                <Button  x:Name="BtnAgregar" Text="Agregar al carrito" BackgroundColor="#0583F2" TextColor="White" BorderRadius="10"/>
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

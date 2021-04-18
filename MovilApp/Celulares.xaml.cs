@@ -81,7 +81,23 @@ namespace MovilApp
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+
             Producto selectedItem = e.SelectedItem as Producto;
+
+            ((ListView)sender).SelectedItem = null;
+
+            if (e.SelectedItem == null) return;
+            {
+                //DisplayAlert("Proximamente", selectedItem.Name, "Muchas Gracias");
+            }
+
+
+            Individual indiv = new Individual(selectedItem.Name, selectedItem.Price, selectedItem.Url);
+
+            indiv.Title = (selectedItem.Name);
+
+            Navigation.PushAsync(indiv);
+
         }
 
 

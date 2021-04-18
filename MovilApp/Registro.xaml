@@ -24,10 +24,7 @@
                         <Entry x:Name="txtNombre" Placeholder="Nombre" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
-                        <Entry x:Name="txtApellidoPaterno" Placeholder="Primer apellido" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
-                        <Label Text="" ></Label>
-
-                        <Entry x:Name="txtApellidoMaterno" Placeholder="Segundo apellido" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
+                        <Entry x:Name="txtApellido" Placeholder="Apellidos" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
                         <Entry x:Name="txtIdentificacion" Placeholder="Identificación" PlaceholderColor="White" TextColor="White" MaxLength="9"/>
@@ -36,10 +33,6 @@
                         <Entry x:Name="txtPhone" Placeholder="Número telefónico" PlaceholderColor="White" TextColor="White" MaxLength="8"/>
                         <Label Text="" ></Label>
 
-                        <Label Text="Fecha de nacimiento: " TextColor="White"/>
-
-                        <DatePicker x:Name="fecha" />
-                        <Label Text="" ></Label>
 
                         <Entry x:Name="txtDireccion" Placeholder="Dirección" PlaceholderColor="White" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
@@ -56,9 +49,6 @@
                         <Button  x:Name="btnIr" Text="Registrarse" BackgroundColor="#0583F2" TextColor="White" 
                     BorderRadius="20" />
 
-                        <Button  x:Name="btnCrearAdmin" Text="Registrarse como Administrador" BackgroundColor="#0583F2" TextColor="White" 
-                    BorderRadius="20" />
-                        
                         <Button  x:Name="btnVolver" Text="Regresar" BackgroundColor="#0583F2" TextColor="White" 
                     BorderRadius="20" />
 

@@ -20,10 +20,9 @@ namespace MovilApp
         }
         private void BtnAllUser_Clicked(object sender, EventArgs e)
         {
-            var allUsers = UsuarioRepository.Instancia.GetAllUsers();
-            userList.ItemsSource = allUsers;
-            StatusMessage.Text = UsuarioRepository.Instancia.EstadoMensaje;
+
         }
+
 
     }
 }

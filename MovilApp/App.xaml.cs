@@ -7,10 +7,11 @@ namespace MovilApp
 {
     public partial class App : Application
     {
+        public static string Token;
+
         public App(string filename)
         {
             InitializeComponent();
-            UsuarioRepository.Inicializador(filename);
             MainPage = new NavigationPage( new MainPage());
         }
 

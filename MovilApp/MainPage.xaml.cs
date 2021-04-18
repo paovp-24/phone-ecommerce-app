@@ -1,19 +1,16 @@
-﻿using SQLite;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Linq;
+﻿using System;
 using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using MovilApp.Models;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Net;
+using MovilApp.Controllers;
 
 namespace MovilApp
 {
     public partial class MainPage : ContentPage
     {
-        String DB_PATH = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Siu_cSharp.db3");
 
         public MainPage()
         {
@@ -36,31 +33,22 @@ namespace MovilApp
             ((NavigationPage)this.Parent).PushAsync(new Registro());
         }
 
-        private void BtnIr_Clicked(object sender, EventArgs e)
+        private async void BtnIr_Clicked(object sender, EventArgs e)
         {
-            var db = new SQLiteConnection(DB_PATH);
-            var tablaUsuario = db.Table<Usuario>();
-            var adminDB = tablaUsuario.Where(field => field.Email == txtCorreo.Text && field.Password == txtPass.Text && field.Rol == 1).FirstOrDefault();
-            var usuarioDB = tablaUsuario.Where(field => field.Email == txtCorreo.Text && field.Password == txtPass.Text && field.Rol == 0).FirstOrDefault();
+            UserManager usuarioManager = new UserManager();
+            Login userLogin = await usuarioManager.Validar(txtCorreo.Text, txtPass.Text);
 
-
-            //if (txtCorreo.Text == "Usuario" && txtPass.Text == "123456")
-            if (usuarioDB != null)
+            if (userLogin != null)
             {
-                DisplayAlert("Inicio de Sesion", "Ingreso Correcto, Bienvenido!!!", "Confirmar");
-                ((NavigationPage)this.Parent).PushAsync(new DeBanco());
-            }
-            else if (adminDB != null )
-            {
-                DisplayAlert("Inicio de Sesion", "Ingreso Correcto como administrador, Bienvenido!!!", "Confirmar");
-                ((NavigationPage)this.Parent).PushAsync(new Admin());
+                await DisplayAlert("Inicio de Sesion", "Ingreso Correcto, Bienvenido!!!", "Confirmar");
+                await  ((NavigationPage)this.Parent).PushAsync(new DeBanco());
             }
             else
             {
-                DisplayAlert("Inicio de Sesion", "Ingreso Incorrecto, Revise sus credenciales", "Cancelar");
+                await DisplayAlert("Inicio de Sesion", "Ingreso Incorrecto, Revise sus credenciales", "Cancelar");
             }
         }
 
-        
+
     }
 }

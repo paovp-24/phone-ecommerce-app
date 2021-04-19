@@ -46,7 +46,7 @@
                         <Entry x:Name="txtPassConfirm" Placeholder="Confirmar contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White" MaxLength="100"/>
                         <Label Text="" ></Label>
 
-                        <Button  x:Name="btnIr" Text="Registrarse" BackgroundColor="#0583F2" TextColor="White" 
+                        <Button  x:Name="btnRegistrar" Text="Registrarse" BackgroundColor="#0583F2" TextColor="White" 
                     BorderRadius="20" />
 
                         <Button  x:Name="btnVolver" Text="Regresar" BackgroundColor="#0583F2" TextColor="White" 

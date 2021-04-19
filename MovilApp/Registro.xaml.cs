@@ -25,7 +25,7 @@ namespace MovilApp
         {
             InitializeComponent();
 
-            btnIr.Clicked += BtnIr_Clicked;
+            btnRegistrar.Clicked += btnRegistrar_Clicked;
             
             btnVolver.Clicked += BtnVolver_Clicked;
         }
@@ -35,7 +35,7 @@ namespace MovilApp
             ((NavigationPage)this.Parent).PushAsync(new MainPage());
         }
 
-        private async void BtnIr_Clicked (object sender, EventArgs e)
+        private async void btnRegistrar_Clicked(object sender, EventArgs e)
         {
             if (txtNombre.Text != null &&
                 txtApellido.Text != null &&
@@ -47,23 +47,23 @@ namespace MovilApp
                 txtPassConfirm.Text != null &&
                 txtPass.Text == txtPassConfirm.Text)
             {
-                UserManager userManager = new UserManager();
-                Usuario user = new Usuario();
+
                 Usuario registerUser = new Usuario()
                 {
-                    Nombre = txtNombre.Text,
-                    Apellidos = txtApellido.Text,
-                    ID = txtIdentificacion.Text,
-                    Telefono = Convert.ToInt32(txtPhone.Text),
-                    Direccion = txtDireccion.Text,
-                    Email = txtCorreo.Text,
-                    Password = txtPass.Text
+                    NOMBRE = txtNombre.Text,
+                    APELLIDOS = txtApellido.Text,
+                    IDENTIFICACION = txtIdentificacion.Text,
+                    TELEFONO = Convert.ToInt32(txtPhone.Text),
+                    DIRECCION = txtDireccion.Text,
+                    EMAIL = txtCorreo.Text,
+                    PASSWORD = txtPass.Text,
 
                 };
+                UserManager usuarioManager = new UserManager();
 
-                user = await userManager.Ingresar(registerUser);
+                Usuario usuarioRegistrado = await usuarioManager.Registrar(registerUser);
 
-                if (user != null)
+                if (registerUser != null)
                 {
                     await DisplayAlert("Registro", "Registro Completado, Inicie Sesion", "Ir");
                     await ((NavigationPage)this.Parent).PushAsync(new MainPage());
@@ -83,7 +83,7 @@ namespace MovilApp
                txtPassConfirm.Text != null &&
                txtPass.Text != txtPassConfirm.Text)
             {
-               await DisplayAlert("Registro", "Registro Incorrecto, Las contraseñas no coinciden", "Volver");
+                await DisplayAlert("Registro", "Registro Incorrecto, Las contraseñas no coinciden", "Volver");
             }
 
             if (txtNombre.Text == null &&

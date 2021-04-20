@@ -4,7 +4,7 @@
              x:Class="MovilApp.DeBanco">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="shoppingCart.png" Order="Primary" ></ToolbarItem>
+        <ToolbarItem IconImageSource="shoppingCart.png" x:Name="BuyCar" Order="Primary" ></ToolbarItem>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>

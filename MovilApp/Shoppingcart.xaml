@@ -1,20 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MovilApp.Celulares">
-
-    <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="shoppingCart.png" x:Name="BuyCar" Order="Primary" ></ToolbarItem>
-    </ContentPage.ToolbarItems>
-    
+             x:Class="MovilApp.Shoppingcart">
     <ContentPage.Content>
-
         <Grid>
             <Image Source="fondo1.png" Aspect="AspectFill"/>
             <BoxView Color="#35AAF2" Opacity="0.3" />
             <StackLayout>
                 <Image Grid.Row="0" Source="logo1.png" WidthRequest="150" HeightRequest="150" Margin="0,50,0,30"/>
-                <ListView x:Name="lstProducts" ItemsSource="{Binding Products} " HasUnevenRows="True"
+                <ListView ItemsSource="{Binding Shopping}" HasUnevenRows="True"
                     ItemSelected="ListView_ItemSelected" ItemTapped="ListView_ItemTapped" HorizontalOptions="CenterAndExpand">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -29,11 +23,11 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <Image Grid.RowSpan="2" Source="{Binding IMAGEN}" Aspect="AspectFill" 
+                                    <Image Grid.RowSpan="2" Source="{Binding IMAGE}" Aspect="AspectFill" 
                                    HeightRequest="60" WidthRequest="60"/>
-                                    <Label Grid.Column="1" Text="{Binding NOMBRE} " FontAttributes="Bold" TextColor="White"  />
+                                    <Label Grid.Column="1" Text="{Binding NOMBR} " FontAttributes="Bold" TextColor="White"  />
                                     <Label Grid.Row="1" Grid.Column="1" 
-                                           Text="{Binding PRECIO, StringFormat='Precio: {0:N} '}"
+                                           Text="{Binding PRECI, StringFormat='Precio: {0:N} '}"
                                            TextColor="White" 
                                    VerticalOptions="End" />
 
@@ -43,7 +37,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <Label Text=""/>
-       
+
                 <Button  x:Name="Btnsalir" Text="Salir" BackgroundColor="#0583F2" TextColor="White" BorderRadius="10"/>
             </StackLayout>
         </Grid>

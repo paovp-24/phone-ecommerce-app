@@ -20,7 +20,17 @@ namespace MovilApp
             Btnsalir.Clicked += Btnsalir_Clicked;
 
             BtnCompra.Clicked += BtnCompra_Clicked;
+
+
+            BuyCar.Clicked += BuyCar_Clicked;
+
         }
+
+        private void BuyCar_Clicked(object sender, EventArgs e)
+        {
+            ((NavigationPage)this.Parent).PushAsync(new Shoppingcart());
+        }
+
 
         private void BtnCompra_Clicked(object sender, EventArgs e)
         {

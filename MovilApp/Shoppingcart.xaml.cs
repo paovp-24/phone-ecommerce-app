@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,61 +15,17 @@ namespace MovilApp
     public partial class Shoppingcart : ContentPage
     {
 
-        public List<Proform> Shopping { get; set; }
-
-
         public Shoppingcart()
         {
             InitializeComponent();
-            Shopping = new List<Proform>();
-            LoadProductsG();
 
-
-
-            BindingContext = this;
+            carrito.ItemsSource = Products.carrito;
 
 
             Btnsalir.Clicked += Btnsalir_Clicked;
+
+            BindingContext = this;
         }
-
-
-
-
-        public void LoadProductsG()
-        {
-
-            Shopping = new List<Proform>();
-
-            Shopping.Add(new Proform
-            {
-                NOMBR = "Samsung",
-                IMAGE = "https://images.samsung.com/is/image/samsung/latin-galaxy-s20-plus-g985-bts-sm-g985fzpjgto-frontbpurple-thumb-261222598",
-                PRECI = 5
-
-            });
-
-        }
-
-
-        public void LoadProducts(string Name, string Image, decimal Price)
-        {
-
-
-            Shopping.Add(new Proform
-            {
-                NOMBR = Name,
-                IMAGE = Image,
-                PRECI = Price
-
-            });
-        }
-
-
-
-
-
-
-
 
 
 
@@ -77,18 +34,31 @@ namespace MovilApp
             ((NavigationPage)this.Parent).PushAsync(new DeBanco());
         }
 
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            throw new NotImplementedException();
+
+
+            Products selectedItem = e.SelectedItem as Products;
+
+
+            var action = await DisplayAlert("Carrito de Compras", "¿Quiere Eliminar el Producto del Carrito?", "Si", "No");
+            if (action)
+            {
+
+                Products carrito = new Products();
+                carrito.removerItem(Products.carrito.IndexOf(selectedItem));
+            }
 
         }
 
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            throw new NotImplementedException();
+            Products tappedItem = e.Item as Products;
         }
 
 
     }
 }
+
+

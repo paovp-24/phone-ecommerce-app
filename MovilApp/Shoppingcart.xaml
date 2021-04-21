@@ -8,7 +8,7 @@
             <BoxView Color="#35AAF2" Opacity="0.3" />
             <StackLayout>
                 <Image Grid.Row="0" Source="logo1.png" WidthRequest="150" HeightRequest="150" Margin="0,50,0,30"/>
-                <ListView ItemsSource="{Binding Shopping}" HasUnevenRows="True"
+                <ListView x:Name="carrito"  HasUnevenRows="True"
                     ItemSelected="ListView_ItemSelected" ItemTapped="ListView_ItemTapped" HorizontalOptions="CenterAndExpand">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -23,11 +23,11 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <Image Grid.RowSpan="2" Source="{Binding IMAGE}" Aspect="AspectFill" 
+                                    <Image Grid.RowSpan="2" Source="{Binding IMAGEN}" Aspect="AspectFill" 
                                    HeightRequest="60" WidthRequest="60"/>
-                                    <Label Grid.Column="1" Text="{Binding NOMBR} " FontAttributes="Bold" TextColor="White"  />
+                                    <Label Grid.Column="1" Text="{Binding NOMBRE} " FontAttributes="Bold" TextColor="White"  />
                                     <Label Grid.Row="1" Grid.Column="1" 
-                                           Text="{Binding PRECI, StringFormat='Precio: {0:N} '}"
+                                           Text="{Binding PRECIO, StringFormat='Precio: {0:N} '}"
                                            TextColor="White" 
                                    VerticalOptions="End" />
 

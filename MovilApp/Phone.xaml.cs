@@ -66,7 +66,7 @@ namespace MovilApp
             }
 
 
-            Individual indiv = new Individual(selectedItem.NOMBRE, selectedItem.PRECIO.ToString(), selectedItem.IMAGEN); 
+            Individual indiv = new Individual(selectedItem); 
 
             indiv.Title = (selectedItem.NOMBRE); 
 

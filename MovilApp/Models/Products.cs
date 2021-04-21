@@ -14,6 +14,34 @@ namespace MovilApp.Models
         public decimal PRECIO { get; set; }
         public int STOCK { get; set; }
 
+        public static List<Products> carrito = new List<Products>();
+
+        public void agregarItem(Products item)
+        {
+            carrito.Add(item);
+        }
+
+
+        public void removerItem(int index)
+        {
+            carrito.RemoveAt(index);
+        }
+
+
+
+
+        public decimal devolverPrecio()
+        {
+            decimal totalCarrito = 0;
+
+            foreach (Products item in carrito)
+            {
+                totalCarrito += item.PRECIO;
+            }
+            return totalCarrito;
+        }
+
+
     }
 
 

@@ -14,25 +14,39 @@ namespace MovilApp
   
     public partial class Individual : ContentPage
     {
-        public Individual( string Name, string price, string img)
+        Products phone = new Products();
+
+        public Individual(Products item)
         {
             InitializeComponent();
 
-            img_producto.Source = img;
+            phone.PRODUCTO_ID = item.PRODUCTO_ID;
+            phone.NOMBRE = item.NOMBRE;
+            phone.DETALLES = item.DETALLES;
+            phone.IMAGEN = item.IMAGEN;
+            phone.GARANTIA = item.GARANTIA;
+            phone.PRECIO = item.PRECIO;
+            phone.STOCK = item.STOCK;
 
-            LabelName.Text = Name;
+            img_producto.Source = item.IMAGEN;
 
-            LabelPrice.Text = price;
+            LabelName.Text = item.NOMBRE;
+
+            LabelPrice.Text = item.PRECIO.ToString();
 
             BtnAgregar.Clicked += BtnAgregar_Clicked;
 
         }
 
+
         private void BtnAgregar_Clicked(object sender, EventArgs e)
         {
 
-            Shoppingcart Shop = new Shoppingcart();
-            Shop.LoadProducts(LabelName.Text, "https://thumbs.dreamstime.com/z/item-del-nuevo-producto-en-almac%C3%A9n-25048588.jpg", Decimal.Parse(LabelPrice.Text));
+            Products carrito = new Products();
+            carrito.agregarItem(phone);
+
+            // Verificacion y redirrecion
+
             DisplayAlert("Compra", "Producto Agregado al Carrito", "Aceptar");
             ((NavigationPage)this.Parent).PushAsync(new Celulares());
 

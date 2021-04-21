@@ -28,8 +28,6 @@ namespace MovilApp.Models
         }
 
 
-
-
         public decimal devolverPrecio()
         {
             decimal totalCarrito = 0;

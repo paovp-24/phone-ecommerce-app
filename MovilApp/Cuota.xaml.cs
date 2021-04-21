@@ -46,7 +46,7 @@ namespace MovilApp
             var action = await DisplayAlert("Planeamiento de finanzas", "¿Quiere seleccionar este plan para su facturación?", "Si", "No");
             if (action)
             {
-                await ((NavigationPage)this.Parent).PushAsync(new Preview());
+                await ((NavigationPage)this.Parent).PushAsync(new Preview(selectedItem));
 
             }
             else
@@ -60,7 +60,7 @@ namespace MovilApp
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            Products tappedItem = e.Item as Products;
+            Cuot tappedItem = e.Item as Cuot;
         }
 
     }

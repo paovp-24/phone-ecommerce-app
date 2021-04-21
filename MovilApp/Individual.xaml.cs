@@ -28,6 +28,7 @@ namespace MovilApp
             phone.PRECIO = item.PRECIO;
             phone.STOCK = item.STOCK;
 
+
             img_producto.Source = item.IMAGEN;
 
             LabelName.Text = item.NOMBRE;

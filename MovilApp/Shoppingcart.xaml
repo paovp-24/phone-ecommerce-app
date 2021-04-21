@@ -19,7 +19,7 @@
                     <Label Text="Mi Carrito" FontSize="20" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                     <Label Text="" ></Label>
                     <ListView x:Name="carrito"  HasUnevenRows="True"
-                    ItemSelected="ListView_ItemSelected" ItemTapped="ListView_ItemTapped" HorizontalOptions="CenterAndExpand">
+                    ItemSelected="ListView_ItemSelected" ItemTapped="ListView_ItemTapped" HorizontalOptions="CenterAndExpand" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>

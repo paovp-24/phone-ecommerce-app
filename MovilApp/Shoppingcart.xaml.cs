@@ -53,6 +53,8 @@ namespace MovilApp
 
                 Products carrito = new Products();
                 carrito.removerItem(Products.carrito.IndexOf(selectedItem));
+                refresh();
+
             }
 
         }
@@ -61,6 +63,11 @@ namespace MovilApp
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             Products tappedItem = e.Item as Products;
+        }
+
+        private void refresh()
+        {
+            var vUpdatedPage = new Shoppingcart(); Navigation.InsertPageBefore(vUpdatedPage, this); Navigation.PopAsync();
         }
 
 

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace MovilApp.Controllers
 {
-    class ProductsManager
+    class CuotaManager
     {
-        string UrlAllProducts = "http://192.168.0.28:45455/api/producto/allProducts";
+        string UrlAllCuotas = "http://192.168.0.28:45455/api/cuota/allCuota";
 
 
         HttpClient GetClient()
@@ -23,13 +23,13 @@ namespace MovilApp.Controllers
         }
 
  
-        public async Task<IEnumerable<Products>> ObtenerUsuarios()
+        public async Task<IEnumerable<Cuot>> ObtenerCuota()
         {
             HttpClient httpClient = GetClient();
 
-            string resultado = await httpClient.GetStringAsync(UrlAllProducts);
+            string resultado = await httpClient.GetStringAsync(UrlAllCuotas);
 
-            return JsonConvert.DeserializeObject<IEnumerable<Products>>(resultado);
+            return JsonConvert.DeserializeObject<IEnumerable<Cuot>>(resultado);
         }
 
 

@@ -20,6 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Cuota.xaml.cs">
+      <DependentUpon>Cuota.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Phone.xaml.cs">
       <DependentUpon>Phone.xaml</DependentUpon>
     </Compile>
@@ -29,9 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Admin.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Phone.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -39,6 +39,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Individual.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Preview.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Recuperar.xaml">

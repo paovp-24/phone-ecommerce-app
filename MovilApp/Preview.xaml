@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovilApp.Preview">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Terminar" x:Name="btnTerminar" Order="Primary" ></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <ScrollView Orientation="Vertical">
+                <Grid>
+                    <Image Source="fondo1.png" Aspect="AspectFill"/>
+                    <BoxView Color="#35AAF2" Opacity="0.3" />
+                    <StackLayout>
+                        <Image Grid.Row="0" Source="logo1.png" WidthRequest="150" HeightRequest="150" Margin="0,50,0,30"/>
+                        <Label Text="Preview" FontSize="20" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                        <ListView x:Name="lstPreview" ItemsSource="{Binding Products} " HasUnevenRows="True"
+                      HorizontalOptions="CenterAndExpand">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid Padding="10">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Image Grid.RowSpan="2" Source="{Binding IMAGEN}" Aspect="AspectFill" 
+                                   HeightRequest="60" WidthRequest="60"/>
+                                            <Label Grid.Column="1" Text="{Binding NOMBRE} " FontAttributes="Bold" TextColor="White"  />
+                                            <Label Grid.Row="1" Grid.Column="1" 
+                                           Text="{Binding PRECIO, StringFormat='Precio: {0:N} '}"
+                                           TextColor="White" 
+                                   VerticalOptions="End" />
+
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <Label Text=""/>
+
+                    </StackLayout>
+                </Grid>
+            </ScrollView>
+
+        </StackLayout>
+        
+        
+        
+    </ContentPage.Content>
+</ContentPage>

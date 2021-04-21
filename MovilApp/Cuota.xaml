@@ -1,12 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MovilApp.Celulares">
+             x:Class="MovilApp.Cuota">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="shoppingCart.png" x:Name="BuyCar" Order="Primary" ></ToolbarItem>
-    </ContentPage.ToolbarItems>
-    
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
             <Grid>
@@ -14,7 +10,9 @@
             <BoxView Color="#35AAF2" Opacity="0.3" />
             <StackLayout>
                 <Image Grid.Row="0" Source="logo1.png" WidthRequest="150" HeightRequest="150" Margin="0,50,0,30"/>
-                <ListView x:Name="lstProducts" ItemsSource="{Binding Products} " HasUnevenRows="True"
+                    <Label Text="Seleccione un plan:" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="Title"/>
+                    <Label Text=""></Label>
+                    <ListView x:Name="listaPlan" ItemsSource="{Binding Cuota} " HasUnevenRows="True"
                     ItemSelected="ListView_ItemSelected" ItemTapped="ListView_ItemTapped" HorizontalOptions="CenterAndExpand">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -29,11 +27,9 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <Image Grid.RowSpan="2" Source="{Binding IMAGEN}" Aspect="AspectFill" 
-                                   HeightRequest="60" WidthRequest="60"/>
-                                    <Label Grid.Column="1" Text="{Binding NOMBRE} " FontAttributes="Bold" TextColor="White"  />
+                                        <Label Grid.Column="1" Text="{Binding TIPO_CUOTA, StringFormat='Tipo de plan: {0:N} '}" FontAttributes="Bold" TextColor="White"  />
                                     <Label Grid.Row="1" Grid.Column="1" 
-                                           Text="{Binding PRECIO, StringFormat='Precio: {0:N} '}"
+                                           Text="{Binding TASA_INTERES, StringFormat='Tasa de interes: {0:N} '}"
                                            TextColor="White" 
                                    VerticalOptions="End" />
 

@@ -21,17 +21,23 @@ namespace MovilApp
 
             carrito.ItemsSource = Products.carrito;
 
-
-            Btnsalir.Clicked += Btnsalir_Clicked;
+            btnSiguiente.Clicked += BtnSiguiente_Clicked;
 
             BindingContext = this;
         }
 
-
-
-        private void Btnsalir_Clicked(object sender, EventArgs e)
+        private void BtnSiguiente_Clicked(object sender, EventArgs e)
         {
-            ((NavigationPage)this.Parent).PushAsync(new DeBanco());
+            if ((carrito.ItemsSource as List<Products>).Count == 0)
+            {
+                DisplayAlert("Carrito","No hay ningun producto en el carrito","Volver");
+            }
+            else
+            {
+            ((NavigationPage)this.Parent).PushAsync(new Cuota());
+
+            }
+
         }
 
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

@@ -22,9 +22,6 @@ namespace MovilApp
             InitializeComponent();
 
 
-
-            Btnsalir.Clicked += Btnsalir_Clicked;
-
             InicializarControles();
 
 
@@ -41,17 +38,11 @@ namespace MovilApp
         {
             ProductsManager ProductManager = new ProductsManager();
             IEnumerable<Products> products = new ObservableCollection<Products>();
-            products = await ProductManager.ObtenerUsuarios(App.Token);
+            products = await ProductManager.ObtenerUsuarios();
             lstProducts.ItemsSource = products;
         }
 
 
-
-
-        private void Btnsalir_Clicked(object sender, EventArgs e)
-        {
-            ((NavigationPage)this.Parent).PushAsync(new DeBanco());
-        }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {

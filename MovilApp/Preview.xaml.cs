@@ -1,5 +1,4 @@
-﻿using MovilApp.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,18 +10,20 @@ using Xamarin.Forms.Xaml;
 namespace MovilApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Admin : ContentPage
+    public partial class Preview : ContentPage
     {
-        public Admin()
+        public Preview()
         {
             InitializeComponent();
-            BtnAllUser.Clicked += BtnAllUser_Clicked;
+
+            btnTerminar.Clicked += BtnTerminar_Clicked;
         }
-        private void BtnAllUser_Clicked(object sender, EventArgs e)
+
+        private void BtnTerminar_Clicked(object sender, EventArgs e)
         {
 
+
+
         }
-
-
     }
 }

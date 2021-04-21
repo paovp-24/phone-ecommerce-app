@@ -86,11 +86,15 @@ namespace MovilApp
                 await DisplayAlert("Registro", "Registro Incorrecto, Las contraseñas no coinciden", "Volver");
             }
 
-            if (txtNombre.Text == null &&
-                txtCorreo.Text == null &&
-                txtPhone.Text == null &&
-                txtPass.Text == null &&
+            if (txtNombre.Text == null ||
+                txtApellido.Text == null||
+                txtIdentificacion.Text == null||
+                txtDireccion.Text == null||
+                txtCorreo.Text == null ||
+                txtPhone.Text == null ||
+                txtPass.Text == null ||
                 txtPassConfirm.Text == null
+
             )
             {
                 await DisplayAlert("Registro", "Registro Incorrecto, Revise que todos los datos esten completos", "Volver");

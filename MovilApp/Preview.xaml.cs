@@ -59,12 +59,10 @@ namespace MovilApp
             try
             {
 
-
+                //Genera los datos de la factura
                 FacturaManager facturaManager = new FacturaManager();
                 Factura facturaIngresado = new Factura();
                 Factura factura = new Factura()
-
-
 
                 {
 
@@ -76,22 +74,32 @@ namespace MovilApp
 
                 };
 
-                Compra_productoManager compra_productoManager = new Compra_productoManager();
-                Compra_producto compra_productoIngresado = new Compra_producto();
-                Compra_producto compra_producto = new Compra_producto()
-
-                {
-                    FACTURA_ID = 1,
-                    PRODUCTO_ID = 1
-
-                };
-
-
-
+                //Ingresa la factura a la base de datos
                 facturaIngresado = await facturaManager.Ingresar(factura);
 
+                App.facturaSesionID = await facturaManager.obtenerUltimoID();
 
-                compra_productoIngresado = await compra_productoManager.Ingresar(compra_producto);
+
+                //Genera los datos de compra_producto
+                Compra_productoManager compra_productoManager = new Compra_productoManager();
+                Compra_producto compra_productoIngresado = new Compra_producto();
+
+
+                foreach (Products product in Products.carrito)
+                {
+                    Compra_producto compra_producto = new Compra_producto()
+
+                    {
+                        FACTURA_ID = App.facturaSesionID,
+                        PRODUCTO_ID = product.PRODUCTO_ID
+
+                    };
+
+                    //Ingresa la compra_producto a la base de datos
+                    compra_productoIngresado = await compra_productoManager.Ingresar(compra_producto);
+
+                }
+
 
 
 

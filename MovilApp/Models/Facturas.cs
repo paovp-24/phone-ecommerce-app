@@ -6,6 +6,7 @@ namespace MovilApp.Models
 {
     public class Factura
     {
+        public int FACTURA_ID { get; set; }
         public int USUARIO_ID { get; set; }
         public int PLAN_ID { get; set; }
         public decimal MONTO_FACTURA { get; set; }

@@ -11,8 +11,8 @@ namespace MovilApp.Controllers
     class FacturaManager
     {
 
-        string Urlpost = "http://192.168.0.28:45455/api/Factura";
-        string UrlGetLastId = "http://192.168.0.28:45455/api/factura/getLastID";
+        string Urlpost = "http://192.168.88.32:45457/api/Factura";
+        string UrlGetLastId = "http://192.168.88.32:45457/api/factura/getLastID";
 
 
         HttpClient GetClient()

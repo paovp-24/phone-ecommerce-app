@@ -49,13 +49,30 @@ namespace MovilApp
             //calcularPrecioFinal();
         }
 
+        int meses;
+        private void calcularPagoMensual()
+        {        
 
+            switch(miCuota.CUOTA_ID)
+            {
+                case 1:
+                    meses = 3;
+                    break;
 
+                case 2:
+                    meses = 6;
+                    break;
+                case 3:
+                    meses = 9;
+                   break;
+            }
+        }
 
 
 
         private async void btnTerminar_Clicked(object sender, EventArgs e)
         {
+            calcularPagoMensual();
 
             try
             {
@@ -71,6 +88,7 @@ namespace MovilApp
                     PLAN_ID = miCuota.CUOTA_ID,
                     MONTO_FACTURA = Monto,
                     CANT_PRODUCTOS = Products.carrito.Count,
+                    PAGO_MENSUAL = Monto/meses,
                     ESTADO = "1"
 
                 };
@@ -109,7 +127,8 @@ namespace MovilApp
                         $"ID de Factura: {App.usuarioSesionID}\n" +
                         $"ID Plan: {miCuota.CUOTA_ID}\n" +
                         $"Monto de la factura: {Monto}\n" +
-                        $"Cantidad de productos: {Products.carrito.Count}"));
+                        $"Cantidad de productos: {Products.carrito.Count}"+
+                        $"Pago mensual: {Monto/meses}"));
                     await DisplayAlert("Factura generada","Gracias por elegirnos","Aceptar");
                     await ((NavigationPage)this.Parent).PushAsync(new DeBanco());
                 }

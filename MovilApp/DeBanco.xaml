@@ -17,7 +17,7 @@
                 <Label Text=""/>
                 <Button  x:Name="BtnCompra" Text="Compra de Celulares" BackgroundColor="#0583F2" TextColor="White" BorderRadius="20"/>
                 <Label Text=""/>
-                <Button Text="Configuracion de Cuenta" BackgroundColor="#0583F2" TextColor="White" BorderRadius="20"/>
+                <Button Text="Ver facturas" BackgroundColor="#0583F2" TextColor="White" BorderRadius="20"/>
                 <Label Text=""/>
                 <Button  x:Name="Btnsalir" Text="Salir" BackgroundColor="#0583F2" TextColor="White" BorderRadius="10"/>
             </StackLayout>

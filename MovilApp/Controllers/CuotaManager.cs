@@ -10,7 +10,7 @@ namespace MovilApp.Controllers
 {
     class CuotaManager
     {
-        string UrlAllCuotas = "http://192.168.0.28:45455/api/cuota/allCuota";
+        string UrlAllCuotas = "http://192.168.189.1:45455/api/cuota/allCuota";
 
 
         HttpClient GetClient()

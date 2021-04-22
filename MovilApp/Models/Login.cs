@@ -9,5 +9,7 @@ namespace MovilApp.Models
         public string Correo { get; set; }
         public string Password { get; set; }
 
+
+
     }
 }

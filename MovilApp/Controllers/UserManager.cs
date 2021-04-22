@@ -11,9 +11,9 @@ namespace MovilApp.Controllers
     class UserManager
     {
 
-        string UrlAuthenticate = "http://192.168.0.28:45455/api/login/authenticate";
-        string UrlRegister = "http://192.168.0.28:45455/api/login/register";
-        string UrlAllUser = "http://192.168.0.28:45455/api/login/allUser";
+        string UrlAuthenticate = "http://192.168.189.1:45455/api/login/authenticate";
+        string UrlRegister = "http://192.168.189.1:45455/api/login/register";
+        string UrlAllUser = "http://192.168.189.1:45455/api/login/allUser";
 
 
         public async Task<Usuario> Ingresar(Usuario usuario)
@@ -68,8 +68,14 @@ namespace MovilApp.Controllers
             return JsonConvert.DeserializeObject<IEnumerable<Usuario>>(resultado);
         }
 
+        public async Task<Usuario> ObtenerHotel(string codigo)
+        {
+            HttpClient httpClient = GetClient();
 
+            string resultado = await httpClient.GetStringAsync(string.Concat(Url, codigo));
 
+            return JsonConvert.DeserializeObject<Usuario>(resultado);
+        }
 
     }
 }

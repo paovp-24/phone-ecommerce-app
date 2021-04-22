@@ -52,6 +52,10 @@ namespace MovilApp
             {
                 await DisplayAlert("Inicio de Sesion", "Ingreso Incorrecto, Revise sus credenciales", "Cancelar");
             }
+
+
+            usuarioManager.ObtenerUsuariosID('');
+
         }
 
 

@@ -14,6 +14,7 @@ namespace MovilApp.Controllers
         string UrlAuthenticate = "http://192.168.0.28:45455/api/login/authenticate";
         string UrlRegister = "http://192.168.0.28:45455/api/login/register";
         string UrlAllUser = "http://192.168.0.28:45455/api/login/allUser";
+        string UrlActualizarClave = "http://192.168.0.28:45455/api/login/actualizarUser";
 
 
         public async Task<Usuario> Ingresar(Usuario usuario)
@@ -78,6 +79,18 @@ namespace MovilApp.Controllers
 
             return result.Usuario_ID;
         }
+
+        public async Task<Login> cambiarClave(Login login)
+        {
+            HttpClient httpClient = GetClient();
+
+            var response = await httpClient.PutAsync(UrlActualizarClave,
+                new StringContent(JsonConvert.SerializeObject(login),
+                Encoding.UTF8, "application/json"));
+
+            return JsonConvert.DeserializeObject<Login>(await response.Content.ReadAsStringAsync());
+        }
+
 
     }
 }

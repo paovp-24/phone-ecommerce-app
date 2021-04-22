@@ -23,13 +23,13 @@
 
                     <Entry x:Name="txtCorreo" Placeholder="Correo electrónico" PlaceholderColor="White" TextColor="White"/>
                     <Label Text=""/>
-                    <Entry x:Name="txtOldpass" Placeholder="Contraseña antigua" PlaceholderColor="White" TextColor="White"/>
+                        <Entry x:Name="txtOldpass" Placeholder="Contraseña antigua" PlaceholderColor="White"  IsPassword="True" TextColor="White"/>
                     <Label Text=""/>
                     <Entry x:Name="txtPass" Placeholder="Nueva contraseña" PlaceholderColor="White" IsPassword="True" TextColor="White"/>
                     <Label Text=""/>
                     <Entry x:Name="txtPassConfirm" Placeholder="Confirmar nueva contraseña " PlaceholderColor="White" IsPassword="True" TextColor="White"/>
                     <Label Text=""/>
-                    <Button  x:Name="btnRecuperar" Text="Cambiar Contraseña" BackgroundColor="#0583F2" TextColor="White" 
+                    <Button  x:Name="btnCambiarClave" Text="Cambiar Contraseña" BackgroundColor="#0583F2" TextColor="White" 
                 BorderRadius="20" />
 
                     <Button  x:Name="btnVolver" Text="Regresar" BackgroundColor="#0583F2" TextColor="White" 

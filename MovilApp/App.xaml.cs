@@ -8,6 +8,7 @@ namespace MovilApp
     public partial class App : Application
     {
         public static string Token;
+        public static int usuarioSesionID { get; set; }
 
         public App(string filename)
         {

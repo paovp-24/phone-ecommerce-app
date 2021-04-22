@@ -15,6 +15,11 @@ namespace MovilApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Preview : ContentPage
     {
+
+        MainPage mainPage = new MainPage();
+
+        FacturaManager facturaManager = new FacturaManager();
+        Compra_productoManager compra_productoManager = new Compra_productoManager();
         Products products = new Products();
         Cuot miCuota = new Cuot();
 
@@ -52,65 +57,55 @@ namespace MovilApp
 
 
 
-
-        private async void btnTerminar_Clicked(object sender, EventArgs e)
+        private void btnTerminar_Clicked(object sender, EventArgs e)
         {
 
             try
             {
-               
-                
-                FacturaManager facturaManager = new FacturaManager();
-                Factura facturaIngresado = new Factura();
                 Factura factura = new Factura()
-
-
-
-                    {
-
-                      USUARIO_ID = 1,
-                      PLAN_ID = miCuota.CUOTA_ID, 
-                      MONTO_FACTURA = Monto,
-                      CANT_PRODUCTOS  = Products.carrito.Count,
-                      ESTADO  = "1"
-
-                    };
-
-                Compra_productoManager compra_productoManager = new Compra_productoManager();
-                Compra_producto compra_productoIngresado = new Compra_producto();
-                Compra_producto compra_producto = new Compra_producto()
-
                 {
-                    FACTURA_ID = 3,
-                    PRODUCTO_ID = 1
 
+                    USUARIO_ID = App.usuarioSesionID,
+                    PLAN_ID = miCuota.CUOTA_ID,
+                    MONTO_FACTURA = Monto,
+                    CANT_PRODUCTOS = Products.carrito.Count,
+                    ESTADO = "1"
                 };
+                generarFactura(factura);
+              
 
 
+                foreach (Products item in Products.carrito)
+                {
+                    agregarProductosACompra(3, item.PRODUCTO_ID);
+                }
 
-                facturaIngresado = await facturaManager.Ingresar(factura);
-
-
-                compra_productoIngresado = await compra_productoManager.Ingresar(compra_producto);
-
-
-
-
-
-                    if (facturaIngresado != null && compra_productoIngresado != null)
-                    {
-                    await DisplayAlert("Proceso de Compra", "Compra del Carrito realizado con exito", "Aceptar");
-                    }
-                    else
-                    {
-                    await DisplayAlert("Proceso de Compra", "Error en la Compra del Carrito, intente denuevo", "Aceptar");
-                    }
                 
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Proceso de Compra", "Error en la Compra del Carrito, intente denuevo", "Aceptar");
+                 DisplayAlert("Proceso de Compra", "Error en la Compra del Carrito, intente denuevo", "Aceptar");
             }
+        }
+
+
+        private async Task<Compra_producto> agregarProductosACompra(int FACTURA_ID, int PRODUCTO_ID)
+        {
+            Compra_producto compra_producto = new Compra_producto()
+            {
+                FACTURA_ID = FACTURA_ID,
+                PRODUCTO_ID = PRODUCTO_ID
+
+            };
+
+            await compra_productoManager.Ingresar(compra_producto);
+            return compra_producto;
+        }
+
+
+        private async Task<Factura> generarFactura(Factura factura)
+        {
+            return await facturaManager.Ingresar(factura);
         }
 
 

@@ -10,7 +10,7 @@ namespace MovilApp.Controllers
 {
     class ProductsManager
     {
-        string UrlAllProducts = "http://192.168.189.1:45455/api/producto/allProducts";
+        string UrlAllProducts = "http://192.168.0.28:45455/api/producto/allProducts";
 
 
         HttpClient GetClient()

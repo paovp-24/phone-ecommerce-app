@@ -4,6 +4,8 @@ namespace MovilApp.Models
 {
     public class Usuario
     {
+        
+
         public int Usuario_ID { get; set; }
 
         public string NOMBRE { get; set; }

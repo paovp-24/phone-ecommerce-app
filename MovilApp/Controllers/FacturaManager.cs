@@ -13,7 +13,9 @@ namespace MovilApp.Controllers
 
 
 
-        string Urlpost = "http://192.168.189.1:45455/api/Factura";
+        string Urlpost = "http://192.168.0.28:45455/api/Factura";
+        string UrlGetLastId = "http://192.168.0.28:45455/api/factura/getLastID";
+
 
         HttpClient GetClient()
         {
@@ -35,6 +37,16 @@ namespace MovilApp.Controllers
                 Encoding.UTF8, "application/json"));
 
             return JsonConvert.DeserializeObject<Factura>(await response.Content.ReadAsStringAsync());
+        }
+
+
+        public async Task<IEnumerable<Factura>> ObtenerFacturaId()
+        {
+            HttpClient httpClient = GetClient();
+
+            string resultado = await httpClient.GetStringAsync(UrlGetLastId);
+
+            return JsonConvert.DeserializeObject<IEnumerable<Factura>>(resultado);
         }
 
 

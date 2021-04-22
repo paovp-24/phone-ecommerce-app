@@ -37,13 +37,16 @@ namespace MovilApp
         {
             UserManager usuarioManager = new UserManager();
             Login userLogin = await usuarioManager.Validar(txtCorreo.Text, txtPass.Text);
+            App.usuarioSesionID = await usuarioManager.obtenerUsuarioID(txtCorreo.Text, txtPass.Text);
+
 
             if (userLogin != null)
             {
+                //await DisplayAlert("Usuario Session ID", App.usuarioSesionID.ToString(), "Aceptar");
                 await DisplayAlert("Inicio de Sesion", "Ingreso Correcto, Bienvenido!!", "Confirmar");
-                await  ((NavigationPage)this.Parent).PushAsync(new DeBanco());
+                await ((NavigationPage)this.Parent).PushAsync(new DeBanco());
             }
-            else if(userLogin == null)
+            else if (userLogin == null)
             {
                 await DisplayAlert("Inicio de Sesion", "Ingreso Incorrecto, Revise sus credenciales", "Cancelar");
 
@@ -52,6 +55,10 @@ namespace MovilApp
             {
                 await DisplayAlert("Inicio de Sesion", "Ingreso Incorrecto, Revise sus credenciales", "Cancelar");
             }
+
+
+
+
         }
 
 

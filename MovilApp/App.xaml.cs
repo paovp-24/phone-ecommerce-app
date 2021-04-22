@@ -8,11 +8,13 @@ namespace MovilApp
     public partial class App : Application
     {
         public static string Token;
+        public static int usuarioSesionID { get; set; }
+
 
         public App(string filename)
         {
             InitializeComponent();
-            MainPage = new NavigationPage( new MainPage());
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

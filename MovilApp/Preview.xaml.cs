@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MovilApp.Models;
 using MovilApp.Controllers;
+using Xamarin.Essentials;
 
 namespace MovilApp
 {
@@ -101,13 +102,16 @@ namespace MovilApp
                 }
 
 
-
-
-
-
                 if (facturaIngresado != null && compra_productoIngresado != null)
                 {
-                    await DisplayAlert("Proceso de Compra", "Compra del Carrito realizado con exito", "Aceptar");
+                    await DisplayAlert("Proceso de Compra realizado", "Redireccionando al correo para los detalles del envio de su factura", "Aceptar");
+                    await Launcher.OpenAsync(new Uri($"mailto:{App.usuarioSesionEmail}?subject=|MovilApp|Detalles de factura&body=Detalles de la factura\n" +
+                        $"ID de Factura: {App.usuarioSesionID}\n" +
+                        $"ID Plan: {miCuota.CUOTA_ID}\n" +
+                        $"Monto de la factura: {Monto}\n" +
+                        $"Cantidad de productos: {Products.carrito.Count}"));
+                    await DisplayAlert("Factura generada","Gracias por elegirnos","Aceptar");
+                    await ((NavigationPage)this.Parent).PushAsync(new DeBanco());
                 }
                 else
                 {

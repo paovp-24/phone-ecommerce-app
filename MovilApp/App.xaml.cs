@@ -10,7 +10,7 @@ namespace MovilApp
         public static string Token;
         public static int usuarioSesionID { get; set; }
         public static int facturaSesionID { get; set; }
-
+        public static string usuarioSesionEmail { get; set; }
 
 
         public App(string filename)

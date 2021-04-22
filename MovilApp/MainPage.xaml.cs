@@ -38,7 +38,7 @@ namespace MovilApp
             UserManager usuarioManager = new UserManager();
             Login userLogin = await usuarioManager.Validar(txtCorreo.Text, txtPass.Text);
             App.usuarioSesionID = await usuarioManager.obtenerUsuarioID(txtCorreo.Text, txtPass.Text);
-
+            App.usuarioSesionEmail = txtCorreo.Text;
 
             if (userLogin != null)
             {

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovilApp.verFactura">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <Grid>
+                <Image Source="fondo1.png" Aspect="AspectFill"/>
+                <BoxView Color="#35AAF2" Opacity="0.3" />
+                <StackLayout>
+                    <Image Grid.Row="0" Source="logo1.png" WidthRequest="150" HeightRequest="150" Margin="0,50,0,30"/>
+                    <Label Text="Facturas" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="Title"/>
+                    <Label Text=""></Label>
+                    <ListView x:Name="listaFactura" ItemsSource="{Binding Facturas} " HasUnevenRows="True" ItemSelected="ListView_ItemSelected" ItemTapped="ListView_ItemTapped"
+                     HorizontalOptions="CenterAndExpand">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Padding="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Column="1" Text="{Binding FACTURA_ID, StringFormat='Factura ID: {0:N} '}" FontAttributes="Bold" TextColor="White"  />
+                                        <Label Grid.Row="1" Grid.Column="1"
+                                           Text="{Binding MONTO_FACTURA, StringFormat='Monto Pendiente: {0:N} '}"
+                                           TextColor="White" 
+                                   VerticalOptions="End" />
+                                        <Label Grid.Row="2" Grid.Column="1"
+                                           Text="{Binding PAGO_MENSUAL, StringFormat='Pago mensual: {0:N} '}"
+                                           TextColor="White" 
+                                   VerticalOptions="End" />
+
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Label Text=""/>
+
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

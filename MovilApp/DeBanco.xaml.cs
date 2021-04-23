@@ -21,8 +21,15 @@ namespace MovilApp
 
             BtnCompra.Clicked += BtnCompra_Clicked;
 
+            btnVerFactura.Clicked += BtnVerFactura_Clicked;
 
             BuyCar.Clicked += BuyCar_Clicked;
+
+        }
+
+        private void BtnVerFactura_Clicked(object sender, EventArgs e)
+        {
+            ((NavigationPage)this.Parent).PushAsync(new verFactura());
 
         }
 

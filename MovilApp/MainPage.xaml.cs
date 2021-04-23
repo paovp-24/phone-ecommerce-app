@@ -42,7 +42,6 @@ namespace MovilApp
 
             if (userLogin != null)
             {
-                //await DisplayAlert("Usuario Session ID", App.usuarioSesionID.ToString(), "Aceptar");
                 await DisplayAlert("Inicio de Sesion", "Ingreso Correcto, Bienvenido!!", "Confirmar");
                 await ((NavigationPage)this.Parent).PushAsync(new DeBanco());
             }
@@ -56,11 +55,7 @@ namespace MovilApp
                 await DisplayAlert("Inicio de Sesion", "Ingreso Incorrecto, Revise sus credenciales", "Cancelar");
             }
 
-
-
-
         }
-
 
     }
 }

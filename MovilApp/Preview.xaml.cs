@@ -123,7 +123,7 @@ namespace MovilApp
                 if (facturaIngresado != null && compra_productoIngresado != null)
                 {
                     await DisplayAlert("Proceso de Compra realizado", "Redireccionando al correo para los detalles del envio de su factura", "Aceptar");
-                    await Launcher.OpenAsync(new Uri($"mailto:{App.usuarioSesionEmail}?subject=|MovilApp|Detalles de factura&body=Detalles de la factura\n" +
+                    await Launcher.OpenAsync(new Uri($"mailto:{App.usuarioSesionEmail}?subject=MovilApp-Detalles de factura&body=Detalles de la factura\n" +
                         $"ID de Factura: {App.usuarioSesionID}\n" +
                         $"ID Plan: {miCuota.CUOTA_ID}\n" +
                         $"Monto de la factura: {Monto}\n" +

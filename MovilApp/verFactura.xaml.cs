@@ -78,7 +78,7 @@ namespace MovilApp
 
                     //Envio del correo
                     await Launcher.OpenAsync(new Uri($"mailto:{App.usuarioSesionEmail}?subject=MovilApp-Actualización del estado del plan&body=Detalles de la factura\n" +
-                $"ID de Factura: {App.usuarioSesionID}\n" +
+                $"ID de Factura: {App.facturaSesionID}\n" +
                 $"ID Plan: {selectedItem.PLAN_ID}\n" +
                 $"Nuevo Monto de la factura: {selectedItem.MONTO_FACTURA}\n" +
                 $"Cantidad de productos: {Products.carrito.Count}\n" +

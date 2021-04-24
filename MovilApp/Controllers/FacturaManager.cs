@@ -11,10 +11,10 @@ namespace MovilApp.Controllers
     class FacturaManager
     {
 
-        string Urlpost = "http://192.168.0.28:45455/api/Factura";
-        string UrlGetLastId = "http://192.168.0.28:45455/api/factura/getLastID";
-        string UrlActualizarMonto = "http://192.168.0.28:45455/api/factura/actualizarMonto";
-        string UrlEstadoPagado = "http://192.168.0.28:45455/api/factura/actualizarEstado";
+        string Urlpost = "http://192.168.88.32:45455/api/Factura";
+        string UrlGetLastId = "http://192.168.88.32:45455/api/factura/getLastID";
+        string UrlActualizarMonto = "http://192.168.88.32:45455/api/factura/actualizarMonto";
+        string UrlEstadoPagado = "http://192.168.88.32:45455/api/factura/actualizarEstado";
 
         HttpClient GetClient()
         {
@@ -53,7 +53,7 @@ namespace MovilApp.Controllers
         {
             HttpClient httpClient = GetClient();
 
-            string resultado = await httpClient.GetStringAsync($"http://192.168.0.28:45455/api/factura/obtenerFacturas?usuarioID={factura.USUARIO_ID}");
+            string resultado = await httpClient.GetStringAsync($"http://192.168.88.32:45455/api/factura/obtenerFacturas?usuarioID={factura.USUARIO_ID}");
 
             return JsonConvert.DeserializeObject<IEnumerable<Factura>>(resultado);
         }

@@ -81,7 +81,7 @@ namespace MovilApp
                 $"ID de Factura: {App.usuarioSesionID}\n" +
                 $"ID Plan: {selectedItem.PLAN_ID}\n" +
                 $"Nuevo Monto de la factura: {selectedItem.MONTO_FACTURA}\n" +
-                $"Cantidad de productos: {Products.carrito.Count}" +
+                $"Cantidad de productos: {Products.carrito.Count}\n" +
                 $"Pago mensual: {selectedItem.MONTO_FACTURA / meses}"));
                 refresh();
 
@@ -96,7 +96,7 @@ namespace MovilApp
 
         private void refresh()
         {
-            var vUpdatedPage = new Shoppingcart(); Navigation.InsertPageBefore(vUpdatedPage, this); Navigation.PopAsync();
+            var vUpdatedPage = new verFactura(); Navigation.InsertPageBefore(vUpdatedPage, this); Navigation.PopAsync();
         }
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)

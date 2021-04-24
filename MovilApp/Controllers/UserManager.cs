@@ -11,10 +11,10 @@ namespace MovilApp.Controllers
     class UserManager
     {
 
-        string UrlAuthenticate = "http://192.168.0.28:45455/api/login/authenticate";
-        string UrlRegister = "http://192.168.0.28:45455/api/login/register";
-        string UrlAllUser = "http://192.168.0.28:45455/api/login/allUser";
-        string UrlChangePassword = "http://192.168.0.28:45455/api/login/actualizarUser";
+        string UrlAuthenticate = "http://192.168.88.32:45455/api/login/authenticate";
+        string UrlRegister = "http://192.168.88.32:45455/api/login/register";
+        string UrlAllUser = "http://192.168.88.32:45455/api/login/allUser";
+        string UrlChangePassword = "http://192.168.88.32:45455/api/login/actualizarUser";
 
 
 
@@ -74,7 +74,7 @@ namespace MovilApp.Controllers
         {
             HttpClient httpClient = GetClient();
 
-            string resultado = await httpClient.GetStringAsync($"http://192.168.0.28:45455/api/login/getID?correo={correo}&clave={clave}");
+            string resultado = await httpClient.GetStringAsync($"http://192.168.88.32:45455/api/login/getID?correo={correo}&clave={clave}");
 
             var result = JsonConvert.DeserializeObject<Usuario>(resultado);
 
